@@ -17,6 +17,8 @@
 
 using System;
 using System.Diagnostics;
+using System.IO.IsolatedStorage;
+using System.Text;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
@@ -118,6 +120,12 @@ namespace IUTInfo
                 //Debugger.Break();
                 throw e.ExceptionObject;
             }
+
+            Planning.ResetCache();
+
+            MessageBox.Show(e.ExceptionObject.ToString());
+            MessageBox.Show(e.ExceptionObject.Message);
+            MessageBox.Show(e.ExceptionObject.StackTrace);
         }
 
         #region Phone application initialization

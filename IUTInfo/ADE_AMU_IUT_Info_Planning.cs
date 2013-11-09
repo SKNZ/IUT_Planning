@@ -53,7 +53,7 @@ namespace IUTInfo
             get
             {
                 // Do we have the image and its expiry date saved locally ?
-                if (PlanningAcquireDatePerWeekId.ContainsKey(SelectedWeekId) && PlanningImagePerWeekId.ContainsKey(SelectedWeekId))
+                if (PlanningAcquireDatePerWeekId.ContainsKey(SelectedWeekId) && PlanningImagePerWeekId.ContainsKey(SelectedWeekId) && PlanningImagePerWeekId[SelectedWeekId] != null)
                 {
                     // Has the cache expired ? Do we have Internet access ?
                     if (DateTime.Now.Subtract(PlanningAcquireDatePerWeekId[SelectedWeekId]).Hours > ImageCacheExpiryDelayHours && NetworkInterface.GetIsNetworkAvailable())
